@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	  xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta charset="UTF-8"/>
 <title>Cadastro de título</title>
@@ -22,6 +23,15 @@
     
     <!-- starting form with a POST method to /titulos -->
     <form class="form-horizontal" method="POST" action="/titulos">
+    
+    	<!-- Alert Message to notify when a title is saved -->
+    	<!-- thymeleaf: if the attribute mensagem is not empty. -->
+    	<!-- The attribute mensagem will be sent by the controller in the response. -->
+    	<div class="alert alert-success" th:if="${!#strings.isEmpty(mensagem)}">
+    		<!-- thymeleaf: showing the mensagem from the server -->
+    		<span th:text="${mensagem}"></span>
+    	</div>
+    	
     	<!-- starting panel -->
     	<div class="panel panel-default">
     		<!-- panel heading -->
