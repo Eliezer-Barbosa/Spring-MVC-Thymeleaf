@@ -12,6 +12,9 @@ import javax.persistence.Id;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
+import org.springframework.format.annotation.DateTimeFormat;
+import org.springframework.format.annotation.NumberFormat;
+
 // JPA Entity
 @Entity
 public class Titulo {
@@ -24,10 +27,17 @@ public class Titulo {
 	
 	private String descricao;
 	
+	// format to display date
+	@DateTimeFormat(pattern = "dd/MM/yyyy")
 	// save only Date, not Time
 	@Temporal(TemporalType.DATE)
 	private Date dataVencimento;
 	
+	// currency pt-BR format (REAL)
+	// her it has to be in the american format, but,
+	// as we defined the Locale to pt-BR, Spring will
+	// understand it and will print in this pattern fornat.
+	@NumberFormat(pattern = "#,##0.00")
 	private BigDecimal valor;
 	
 	@Enumerated(EnumType.STRING)
