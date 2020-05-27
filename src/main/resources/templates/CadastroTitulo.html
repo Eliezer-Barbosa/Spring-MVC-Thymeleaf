@@ -7,6 +7,8 @@
 <link rel="stylesheet" type="text/css" href="/css/style.css"/>
 </head>
 <body>
+
+	<!-- starting navbar -->
 	<nav class="navbar navbar-inverse navbar-static-top">
         <div class="container-fluid"> 
             <div class="navbar-header">
@@ -16,39 +18,47 @@
             </div>
         </div>
     </nav>
+    <!-- closing navbar -->
     
-    <form class="form-horizontal">
+    <!-- starting form with a POST method to /titulos -->
+    <form class="form-horizontal" method="POST" action="/titulos">
+    	<!-- starting panel -->
     	<div class="panel panel-default">
+    		<!-- panel heading -->
     		<div class="panel-heading">
+    			<!-- heading content -->
     			<h1 class="panel-title">Novo título</h1>
     		</div>
+    		<!-- closing panel heading -->
     		
+    		<!-- starting panel body, that will hold the form components: labels, inputs and button -->
     		<div class="panel-body">
+    			<!-- form-group for the label descricao and the input descricao -->
 				<div class="form-group">
-					<!-- label for MUST BE == id -->
+					<!-- label 'for' MUST BE == 'id' -->
 					<label for="descricao" class="col-sm-2 control-label">Descrição</label>
 					<div class="col-sm-4"> 
-						<input type="text" class="form-control" id="descricao"/>
+						<input type="text" class="form-control" id="descricao" name="descricao"/>
 					</div>
 				</div>
 				<div class="form-group">
 					<label for="dataVencimento" class="col-sm-2 control-label">Data de vencimento</label>
 					<div class="col-sm-2">  
-						<input type="text" class="form-control"	id="dataVencimento" />
+						<input type="text" class="form-control"	id="dataVencimento" name="dataVencimento" />
 					</div>
 				</div>
 				<div class="form-group">
 					<label for="valor" class="col-sm-2 control-label">Valor</label>
 					<div class="col-sm-2">   
-						<input type="text" class="form-control" id="valor"/>
+						<input type="text" class="form-control" id="valor" name="valor"/>
 					</div>
 				</div>
 				<div class="form-group">
 					<label for="status" class="col-sm-2 control-label">Status</label>
 					<div class="col-sm-2">
-						<select class="form-control">
-							<option>Pendente</option>
-							<option>Recebido</option>
+						<select class="form-control" name="status">
+							<option value="PENDENTE">Pendente</option>
+							<option value="RECEBIDO">Recebido</option>
                     	</select>
                     </div>
 				</div>
